@@ -13,10 +13,13 @@ import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.invoice.InvoiceScreenHandler;
 import views.screen.popup.PopupScreen;
+import views.screen.shipping.ShippingScreenHandler;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.Callable;
 import java.util.logging.Logger;
 
 public class RushScreenHandler extends BaseScreenHandler{
@@ -31,6 +34,7 @@ public class RushScreenHandler extends BaseScreenHandler{
 
     /**
      * set invoice to add rush info
+     *
      * @param invoice invoice from InvoiceScreen
      */
     public void setInvoice(Invoice invoice){
@@ -66,9 +70,15 @@ public class RushScreenHandler extends BaseScreenHandler{
                 ((PlaceOrderController) this.getPreviousScreen().getBController()).addRushInfo(invoice.getOrder(),
                         new RushInfo(instruction, time));
 
+                //recalculate shipping fee
+                invoice.getOrder().setShippingFees(
+                        ((PlaceOrderController) this.getPreviousScreen().getBController()).calculateShippingFee(
+                                invoice.getOrder()));
                 // continue to payment
-                ((InvoiceScreenHandler) this.getPreviousScreen()).goToPayment();
-            }else PopupScreen.error("Not valid instruction or time. Please try again.");
+                ((ShippingScreenHandler) this.getPreviousScreen()).goToInvoice(invoice);
+            }else{
+                PopupScreen.error("Not valid instruction or time. Please try again.");
+            }
         }catch(ParseException|IOException e){
             e.printStackTrace();
             try{

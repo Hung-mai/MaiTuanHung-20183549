@@ -19,7 +19,6 @@ import utils.Configs;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.payment.PaymentScreenHandler;
-import views.screen.rush.RushScreenHandler;
 
 public class InvoiceScreenHandler extends BaseScreenHandler{
 
@@ -54,9 +53,6 @@ public class InvoiceScreenHandler extends BaseScreenHandler{
 
     @FXML
     private VBox vboxItems;
-
-    @FXML
-    private RadioButton rushOrder;
 
     private Invoice invoice;
 
@@ -93,24 +89,13 @@ public class InvoiceScreenHandler extends BaseScreenHandler{
 
     @FXML
     void confirmInvoice(MouseEvent event) throws IOException{
-        if(rushOrder.isSelected()){
-            BaseScreenHandler rushScreen = new RushScreenHandler(this.stage, Configs.RUSH_SCREEN_PATH);
-            //pass invoice to handler
-            ((RushScreenHandler) rushScreen).setInvoice(invoice);
-            rushScreen.setBController(new PaymentController());
-            rushScreen.setPreviousScreen(this);
-            rushScreen.setHomeScreenHandler(homeScreenHandler);
-            rushScreen.setScreenTitle("Rush Information");
-            rushScreen.show();
-            LOGGER.info("Rush information");
-        }else{
-            goToPayment();
-        }
+        goToPayment();
     }
 
     /**
      * After refactor code
      * Use to goToPayment Screen
+     *
      * @throws IOException
      */
     public void goToPayment() throws IOException{

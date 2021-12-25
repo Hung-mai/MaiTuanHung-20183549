@@ -18,9 +18,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import entity.payment.CreditCard;
-import entity.payment.PaymentTransaction;
-
 /**
  * Represent an API call
  * @version 1.1
@@ -67,7 +64,7 @@ public class API{
     public static String post(String url, String data, String token) throws IOException{
         // set up
         allowMethods("PATCH");
-        HttpURLConnection conn = setUpConnection(url, "POST", token);
+        HttpURLConnection conn = setUpConnection(url, "PATCH", token);
 
         // send data
         Writer writer = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));

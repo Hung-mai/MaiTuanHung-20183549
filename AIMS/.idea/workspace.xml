@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f628729-cdd2-475d-90c9-080310327aa8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PlaceRushOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PlaceRushOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/order/RushInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/order/RushInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Configs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/fxml/invoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/fxml/invoice.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/screen/FXMLScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/FXMLScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/screen/invoice/InvoiceScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/invoice/InvoiceScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/PlaceRushOrderControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/PlaceRushOrderControllerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="7f628729-cdd2-475d-90c9-080310327aa8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +11,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -59,10 +49,10 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.16281755" />
     <property name="project.structure.side.proportion" value="0.19337016" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -76,7 +66,7 @@
     <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="AIMS-Student" />
-      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml --illegal-access=warn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,7 +118,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaceOrderControllerTest.validatePhoneNumber (1)" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <configuration name="PlaceOrderControllerTest.validatePhoneNumber" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="AIMS-Student" />
       <extension name="coverage">
         <pattern>
@@ -154,12 +144,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.PlaceRushOrderControllerTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaceRushOrderControllerTest.validateRushInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlaceRushOrderControllerTest.validateRushInfo" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="AIMS-Student" />
       <extension name="coverage">
         <pattern>
@@ -175,56 +166,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaceRushOrderControllerTest.validateRushTime (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AIMS-Student" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.PlaceRushOrderControllerTest" />
-      <option name="METHOD_NAME" value="validateRushTime(java.lang.String,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaceRushOrderControllerTest.validateRushTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AIMS-Student" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.PlaceRushOrderControllerTest" />
-      <option name="METHOD_NAME" value="validateRushTime(java.util.Date,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.PlaceOrderControllerTest.validatePhoneNumber" />
       <item itemvalue="JUnit.PlaceOrderControllerTest" />
       <item itemvalue="JUnit.PlaceOrderControllerTest.validateAddress" />
       <item itemvalue="JUnit.PlaceOrderControllerTest.validateName" />
-      <item itemvalue="JUnit.PlaceOrderControllerTest.validatePhoneNumber (1)" />
       <item itemvalue="JUnit.PlaceRushOrderControllerTest" />
       <item itemvalue="JUnit.PlaceRushOrderControllerTest.validateRushInfo" />
-      <item itemvalue="JUnit.PlaceRushOrderControllerTest.validateRushTime" />
-      <item itemvalue="JUnit.PlaceRushOrderControllerTest.validateRushTime (1)" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.PlaceRushOrderControllerTest.validateRushTime (1)" />
-        <item itemvalue="JUnit.PlaceRushOrderControllerTest.validateRushTime" />
-        <item itemvalue="JUnit.PlaceRushOrderControllerTest.validateRushInfo" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -248,7 +198,14 @@
       <workItem from="1638888416513" duration="3505000" />
       <workItem from="1638971933515" duration="3901000" />
       <workItem from="1638975969869" duration="750000" />
-      <workItem from="1639059176128" duration="4629000" />
+      <workItem from="1639059176128" duration="5101000" />
+      <workItem from="1639064893003" duration="114000" />
+      <workItem from="1639117675118" duration="151000" />
+      <workItem from="1639151397548" duration="1933000" />
+      <workItem from="1640065106980" duration="17164000" />
+      <workItem from="1640319216586" duration="5177000" />
+      <workItem from="1640401587193" duration="614000" />
+      <workItem from="1640409748968" duration="2437000" />
     </task>
     <servers />
   </component>
@@ -265,6 +222,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

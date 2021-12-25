@@ -3,21 +3,18 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
 import java.util.logging.Logger;
 
 import entity.cart.Cart;
 import entity.cart.CartMedia;
-import common.exception.InvalidDeliveryInfoException;
 import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.order.OrderMedia;
 import entity.order.RushInfo;
-import views.screen.popup.PopupScreen;
 
 /**
  * This class controls the flow of place order usecase in our AIMS project
+ *
  * @author nguyenlm
  */
 public class PlaceOrderController extends BaseController{
@@ -29,6 +26,7 @@ public class PlaceOrderController extends BaseController{
 
     /**
      * This method checks the avalibility of product when user click PlaceOrder button
+     *
      * @throws SQLException
      */
     public void placeOrder() throws SQLException{
@@ -37,16 +35,15 @@ public class PlaceOrderController extends BaseController{
 
     /**
      * This method creates the new Order based on the Cart
+     *
      * @return Order
      * @throws SQLException
      */
     public Order createOrder() throws SQLException{
         Order order = new Order();
-        for (Object object : Cart.getCart().getListMedia()) {
+        for(Object object : Cart.getCart().getListMedia()){
             CartMedia cartMedia = (CartMedia) object;
-            OrderMedia orderMedia = new OrderMedia(cartMedia.getMedia(), 
-                                                   cartMedia.getQuantity(), 
-                                                   cartMedia.getPrice());    
+            OrderMedia orderMedia = new OrderMedia(cartMedia.getMedia(), cartMedia.getQuantity(), cartMedia.getPrice());
             order.getlstOrderMedia().add(orderMedia);
         }
         return order;
@@ -54,15 +51,17 @@ public class PlaceOrderController extends BaseController{
 
     /**
      * This method creates the new Invoice based on order
+     *
      * @param order
      * @return Invoice
      */
-    public Invoice createInvoice(Order order) {
+    public Invoice createInvoice(Order order){
         return new Invoice(order);
     }
 
     /**
      * This method takes responsibility for processing the shipping info from user
+     *
      * @param info
      * @throws InterruptedException
      * @throws IOException
@@ -72,62 +71,71 @@ public class PlaceOrderController extends BaseController{
         LOGGER.info(info.toString());
         validateDeliveryInfo(info);
     }
-    
+
     /**
-   * The method validates the info
-   * @param info
-   * @throws InterruptedException
-   * @throws IOException
-   */
+     * The method validates the info
+     *
+     * @param info
+     * @throws InterruptedException
+     * @throws IOException
+     */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException{
-    	
+
     }
 
-    public boolean validatePhoneNumber(String phoneNumber) {
-    	// TODO: your work
-        if(phoneNumber== null) return false;
+    public boolean validatePhoneNumber(String phoneNumber){
+        // TODO: your work
+        if(phoneNumber == null){
+            return false;
+        }
 
-        if(phoneNumber.length()<10) return false;
+        if(phoneNumber.length() < 10){
+            return false;
+        }
 
         try{
             Integer.parseInt(phoneNumber);
         }catch(NumberFormatException e){
             return false;
         }
-    	return true;
+        return true;
     }
 
-    public boolean validateName(String name) {
-        if(name == null) return false;
+    public boolean validateName(String name){
+        if(name == null){
+            return false;
+        }
 
         // TODO: your work
 
         return name.matches("[A-Za-z ]*");
     }
 
-    public boolean validateAddress(String address) {
-    	// TODO: your work
-        if(address==null) return false;
+    public boolean validateAddress(String address){
+        // TODO: your work
+        if(address == null){
+            return false;
+        }
 
-    	return address.matches("/^[a-zA-Z0-9!@#\\$%\\^\\&*\\)\\(+=._-]+$/g");
+        return address.matches("/^[a-zA-Z0-9!@#\\$%\\^\\&*\\)\\(+=._-]+$/g");
     }
-    
+
 
     /**
      * This method calculates the shipping fees of order
+     *
      * @param order
      * @return shippingFee
      */
     public int calculateShippingFee(Order order){
-        Random rand = new Random();
-        int fees = (int)( ( (rand.nextFloat()*10)/100 ) * order.getAmount() );
-        LOGGER.info("Order Amount: " + order.getAmount() + " -- Shipping Fees: " + fees);
-        return fees;
+        /*weight include strategy right now*/
+        return new ShippingStrategyWeightInclude().calculateShippingFee(order);
     }
 
     /**
      * add rush info to order
-     * @param order order to rush
+     *
+     * @param order    order to rush
      * @param rushInfo rush info
      */
     public void addRushInfo(Order order, RushInfo rushInfo){

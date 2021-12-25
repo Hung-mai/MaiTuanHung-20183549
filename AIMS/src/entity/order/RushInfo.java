@@ -6,7 +6,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
-
+/**
+ * Rush info entity to store information in rush order
+ *
+ */
 public class RushInfo{
     /***
      * rush info
